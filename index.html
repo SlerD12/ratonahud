@@ -9,6 +9,15 @@
     <meta name="theme-color" content="#2c3e50">
 </head>
 <body>
+    <div id="permission-overlay" class="overlay">
+        <div class="modal">
+            <img src="icon-192.png" alt="Logo de la App" class="modal-logo">
+            <h2>Permisos de Ubicación</h2>
+            <p>Para que el monitor funcione correctamente durante el trayecto, necesitamos acceso al GPS.</p>
+            <button id="request-permission-btn">Habilitar Sensores</button>
+        </div>
+    </div>
+
     <div class="container">
         <h1>Monitor de Sensores</h1>
         
@@ -18,7 +27,7 @@
             <p id="net-status">Detectando...</p>
             <small id="net-type"></small>
         </div>
-
+        
         <div class="card" id="gps-card">
             <h2>Señal GPS</h2>
             <div class="indicator" id="gps-indicator"></div>
