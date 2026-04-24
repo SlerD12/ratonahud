@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Señal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitor de Sensores</h1>
+        
+        <div class="card" id="network-card">
+            <h2>Cobertura Móvil</h2>
+            <div class="indicator" id="net-indicator"></div>
+            <p id="net-status">Detectando...</p>
+            <small id="net-type"></small>
+        </div>
+
+        <div class="card" id="gps-card">
+            <h2>Señal GPS</h2>
+            <div class="indicator" id="gps-indicator"></div>
+            <p id="gps-status">Buscando satélites...</p>
+            <p class="data">Precisión: <span id="gps-accuracy">-</span> m</p>
+        </div>
+
+        <button id="install-btn" style="display:none;">Instalar App</button>
+    </div>
+
+    <script src="monitor.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
