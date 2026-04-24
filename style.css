@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
+    margin: 0;
 }
 
 .container {
@@ -19,6 +20,13 @@ body {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid #34495e;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #ecf0f1;
 }
 
 .indicator {
@@ -26,14 +34,63 @@ body {
     height: 60px;
     border-radius: 50%;
     margin: 10px auto;
-    background: gray;
+    background: #7f8c8d; /* Gris por defecto */
     border: 4px solid #34495e;
+    transition: all 0.5s ease;
 }
 
+/* Estados de los indicadores */
 .status-good { background: #2ecc71; box-shadow: 0 0 15px #2ecc71; }
 .status-fair { background: #f1c40f; box-shadow: 0 0 15px #f1c40f; }
 .status-bad { background: #e74c3c; box-shadow: 0 0 15px #e74c3c; }
 
+.data {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Estilos para el Bloqueo de Permisos (Overlay) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Fondo casi negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 85%;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+    border: 1px solid #3498db;
+}
+
+.modal-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+.modal p {
+    color: #bdc3c7;
+    line-height: 1.4;
+}
+
+/* Botones */
 button {
     background: #3498db;
     color: white;
@@ -41,5 +98,17 @@ button {
     padding: 15px 30px;
     border-radius: 10px;
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
+    transition: transform 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#request-permission-btn {
+    background: #27ae60; /* Verde para indicar acción positiva */
+}
+
+button:active {
+    transform: scale(0.95); /* Efecto de presión al tocar */
 }
